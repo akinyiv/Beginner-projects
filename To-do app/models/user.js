@@ -3,11 +3,11 @@ const mongoose = require('mongoose')
 const userSchema = new mongoose.Schema({
     username: {
         type: String,
-        require: true
+        required: true
     },
     password: {
         type: String,
-        require: true
+        required: true
     },
     roles: [{
         type: String,
@@ -15,8 +15,8 @@ const userSchema = new mongoose.Schema({
     }],
     active: {
         type: Boolean,
-        default: "true"
+        default: true
     }
 })
 
-module.exports = mongoose.model('User',userSchema)
+module.exports = mongoose.model('User', userSchema)
